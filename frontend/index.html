@@ -139,13 +139,22 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 
 /* HERO */
 .hero{
-  position:relative;min-height:100dvh;
+  position:relative;
+  min-height:100dvh;
+  min-height:100vh;
   display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:5rem 1.5rem 3rem;overflow:hidden;
+  text-align:center;padding:6rem 2rem 3rem;overflow:hidden;
   background:linear-gradient(160deg,#ECF7F0 0%,#E0F0E8 50%,#D4EBE0 100%);
 }
 @media(max-width:600px){
-  .hero{min-height:auto;height:auto;padding:7rem 1.5rem 5rem}
+  .hero{
+    height:100dvh;
+    height:100vh;
+    min-height:600px;
+    padding:0 1.5rem;
+    align-items:center;
+    justify-content:center;
+  }
 }
 .orb{
   position:absolute;border-radius:50%;pointer-events:none;
@@ -731,7 +740,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 
   <canvas id="particleCanvas2" style="position:absolute;inset:0;pointer-events:none;opacity:.5;z-index:1"></canvas>
 
- <div class="hero-inner" style="text-align:center">
+ <div class="hero-inner" style="text-align:center;padding-top:3rem">
     <h1 class="hero-title" style="font-size:clamp(2.8rem,10vw,9rem);margin-bottom:.5rem">
       <span class="grd">Fuel to Future</span>
     </h1>
