@@ -81,12 +81,19 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
   background:rgba(240,247,242,0.88);backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
   transition:box-shadow .3s;
+  box-sizing:border-box;
+  width:100%;
+}
+@media(max-width:768px){
+  .navbar{padding:.75rem 1rem .75rem 1rem;gap:.5rem}
+  .nav-toggle{flex-shrink:0;margin-left:auto;font-size:1.5rem;min-width:2rem;text-align:center}
 }
 .navbar.scrolled{box-shadow:0 2px 20px rgba(46,125,82,0.12)}
 .nav-logo{
   display:flex;align-items:center;gap:.6rem;
   font-weight:800;font-size:.95rem;color:var(--g1);letter-spacing:-.01em;
   max-width:none;
+  flex:1;min-width:0;overflow:hidden;
 }
 .nav-logo-icon{
   width:32px;height:32px;border-radius:8px;
