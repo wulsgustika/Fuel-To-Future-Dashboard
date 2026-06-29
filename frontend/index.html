@@ -81,19 +81,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
   background:rgba(240,247,242,0.88);backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
   transition:box-shadow .3s;
-  box-sizing:border-box;
-  width:100%;
-}
-@media(max-width:768px){
-  .navbar{padding:.75rem 1rem .75rem 1rem;gap:.5rem}
-  .nav-toggle{flex-shrink:0;margin-left:auto;font-size:1.5rem;min-width:2rem;text-align:center}
 }
 .navbar.scrolled{box-shadow:0 2px 20px rgba(46,125,82,0.12)}
 .nav-logo{
   display:flex;align-items:center;gap:.6rem;
   font-weight:800;font-size:.95rem;color:var(--g1);letter-spacing:-.01em;
   max-width:none;
-  flex:1;min-width:0;overflow:hidden;
 }
 .nav-logo-icon{
   width:32px;height:32px;border-radius:8px;
@@ -146,22 +139,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 
 /* HERO */
 .hero{
-  position:relative;
-  min-height:100dvh;
-  min-height:100vh;
+  position:relative;min-height:100vh;
   display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:6rem 2rem 3rem;overflow:hidden;
+  text-align:center;padding:7rem 2rem 3rem;overflow:hidden;
   background:linear-gradient(160deg,#ECF7F0 0%,#E0F0E8 50%,#D4EBE0 100%);
-}
-@media(max-width:600px){
-  .hero{
-    height:100dvh;
-    height:100vh;
-    min-height:600px;
-    padding:0 1.5rem;
-    align-items:center;
-    justify-content:center;
-  }
 }
 .orb{
   position:absolute;border-radius:50%;pointer-events:none;
@@ -221,15 +202,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
   display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:100%;margin:0 auto;
 }
 @media(max-width:800px){.hero-team-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.hero-team-grid{grid-template-columns:1fr 1fr;gap:.75rem}}
-@media(max-height:750px) and (max-width:480px){
-  .hero{padding:4rem 1.2rem 1.5rem}
-  .hero-team-wrap{margin-top:1.2rem}
-  .hero-team-label{margin-bottom:.6rem}
-  .hero-title{font-size:2rem}
-  .hero-stats{margin-top:1.2rem}
-  .hero-cta-btn{margin-top:1rem}
-}
+@media(max-width:480px){.hero-team-grid{grid-template-columns:1fr 1fr}}
 
 .hmc{
   border-radius:16px;overflow:hidden;position:relative;
@@ -240,9 +213,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
   box-shadow:0 4px 20px rgba(46,125,82,0.12);
   transition:transform .3s,box-shadow .3s;
   aspect-ratio:3/4;
-  min-height:180px;
+  min-height:280px;
 }
-@media(max-width:480px){.hmc{min-height:160px}}
 
 .hmc:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(46,125,82,0.22)}
 .hmc.pembimbing{
@@ -305,7 +277,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
   transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;
   margin-top:1.5rem;
 }
-@media(max-width:600px){.btn-cta{margin-top:1rem;padding:.8rem 1.8rem}}
 .btn-cta::before{
   content:'';position:absolute;inset:0;
   background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.2) 60%,transparent 80%);
@@ -543,7 +514,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .ic:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
 .ic.wide{grid-column:1/-1}
 @media(max-width:580px){.ic.wide{grid-column:span 1}}
-@media(max-width:480px){.ic{padding:1.4rem 1.3rem}.about-card{padding:1.4rem}}
 .ic-tooltip{
   position:absolute;inset:0;border-radius:var(--r2);z-index:10;
   background:rgba(30,60,40,0.92);color:#fff;padding:1.4rem;
@@ -620,11 +590,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .map-legend{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .leg{display:flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:600;color:var(--text2)}
 .leg-dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
-.peta-cards{grid-template-columns:repeat(3,1fr)}
-@media(max-width:700px){.peta-cards{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.peta-cards{grid-template-columns:1fr}}
-@media(max-width:768px){ #leafletMap{height:380px!important} }
-@media(max-width:480px){.map-container{padding:1.2rem}}
 .map-real-wrap{
   width:100%;border-radius:12px;overflow:hidden;
   border:1px solid var(--border);background:#e8f4ed;
@@ -747,11 +712,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 
   <canvas id="particleCanvas2" style="position:absolute;inset:0;pointer-events:none;opacity:.5;z-index:1"></canvas>
 
- <div class="hero-inner" style="text-align:center;padding-top:3rem">
-    <h1 class="hero-title" style="font-size:clamp(2.8rem,10vw,9rem);margin-bottom:.5rem">
+ <div class="hero-inner" style="text-align:center">
+    <h1 class="hero-title" style="font-size:clamp(5rem,12vw,9rem);margin-bottom:.6rem">
       <span class="grd">Fuel to Future</span>
     </h1>
-    <p class="hero-subtitle" style="font-size:clamp(.9rem,3vw,1.1rem);margin-bottom:2rem">Kesiapan Indonesia Menuju Era Kendaraan Listrik</p>
+    <p class="hero-subtitle" style="font-size:1.15rem">Kesiapan Indonesia Menuju Era Kendaraan Listrik</p>
+
     <a href="#tentang" class="btn-cta">Jelajahi Data</a>
   </div>
 </section>
@@ -1031,7 +997,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <span id="mapHoverInfo" style="margin-left:auto;font-size:.78rem;color:var(--muted);font-style:italic">Arahkan ke provinsi untuk detail</span>
       </div>
       <div id="leafletMap" style="width:100%;height:500px;border-radius:12px;overflow:hidden;border:1px solid var(--border)"></div>
-      <div class="peta-cards fi" id="petaCards" style="display:grid;gap:1rem;margin-top:1.5rem">
+      <div class="peta-cards fi" id="petaCards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem">
         <div class="peta-card" style="background:rgba(89,161,79,0.1);border:1px solid rgba(89,161,79,0.3);border-radius:var(--r);padding:1rem">
           <div style="font-size:.68rem;font-weight:700;color:#59a14f;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem">Siap</div>
           <div id="ctSiap" style="font-size:1.6rem;font-weight:800;color:var(--text)">–</div>
@@ -1198,10 +1164,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <li>Badan Pusat Statistik. (2024). <em>Produk Domestik Regional Bruto per Kapita Atas Dasar Harga Berlaku Menurut Provinsi (ribu rupiah), 2024</em>. Jakarta: BPS RI.</li>
         <li>Badan Pusat Statistik. (2025). <em>Produk Domestik Regional Bruto per Kapita Atas Dasar Harga Berlaku Menurut Provinsi (ribu rupiah), 2025</em>. Jakarta: BPS RI.</li>
         <li>Kementerian Energi dan Sumber Daya Mineral Republik Indonesia. (2024). <em>Buku Statistik Ketenagalistrikan 2024</em>. Jakarta: Direktorat Jenderal Ketenagalistrikan, Kementerian ESDM RI.</li>
+        <li>GoodStats. Tren Jumlah Penduduk Indonesia 2016–2025. Data pertumbuhan penduduk Indonesia 2019–2025.</li>
+        <li>Kementerian Perindustrian / GATRIK ESDM. Data Kendaraan Listrik 2020–2025. Data populasi kendaraan listrik terdaftar per kategori.</li>
+        <li>Badan Pusat Statistik (BPS). Perkembangan Jumlah Kendaraan Bermotor Menurut Jenis. Data resmi statistik kendaraan bermotor Indonesia 2019–2024.</li>
       </ol>
-      <p style="margin-top:1.5rem;font-size:.78rem;color:var(--muted);font-style:italic">
-        *Daftar pustaka di atas disusun berdasarkan sumber resmi yang digunakan dalam analisis dashboard ini.
-      </p>
     </div>
   </div>
 </section>
@@ -1595,36 +1561,133 @@ Cluster Terpilih = klaster dengan jarak terkecil (MIN)</div>
   },
   penduduk:{
     title:'Metodologi Perhitungan Penduduk vs Kendaraan Bermotor',
-    subtitle:'Dataset 2 · Penduduk vs Kendaraan Bermotor',
+    subtitle:'Dataset 2 · Korelasi Pearson & Proyeksi Regresi Linier',
     html:`
       <h4>A. Sumber Data</h4>
-      <p>Data jumlah penduduk dan jumlah kendaraan bermotor nasional tahun 2019–2026 disusun secara tahunan (deret waktu).</p>
+      <p>Data jumlah penduduk Indonesia dan jumlah kendaraan bermotor nasional tahun 2019–2026 disusun secara tahunan (deret waktu).</p>
 
       <h4>B. Rasio Kendaraan per Penduduk</h4>
       <div class="method-formula">Rasio = Jumlah Kendaraan Bermotor / Jumlah Penduduk</div>
 
       <h4>C. Laju Pertumbuhan Tahunan (Year-over-Year)</h4>
       <p>Laju pertumbuhan dihitung dengan membandingkan nilai tahun berjalan terhadap tahun sebelumnya:</p>
-      <div class="method-formula">Growth Penduduk (%) = ((Penduduk_t / Penduduk_t-1) − 1) × 100
-Growth Kendaraan (%) = ((Kendaraan_t / Kendaraan_t-1) − 1) × 100</div>
+      <div class="method-formula">Growth Penduduk (%) = ((Penduduk_t / Penduduk_t−1) − 1) × 100
+Growth Kendaraan (%) = ((Kendaraan_t / Kendaraan_t−1) − 1) × 100</div>
       <p>Tahun pertama (2019) tidak memiliki nilai growth karena tidak ada data tahun sebelumnya sebagai pembanding.</p>
+
+      <h4>D. Korelasi Pearson — Penduduk vs Total Kendaraan Bermotor</h4>
+      <p>Korelasi Pearson mengukur seberapa kuat hubungan linier antara dua variabel. Nilainya berkisar −1 ≤ r ≤ 1; semakin mendekati 1 semakin kuat hubungan positif.</p>
+      <div class="method-formula">r = Σ(X − X̄)(Y − Ȳ) / √[Σ(X − X̄)² × Σ(Y − Ȳ)²]
+
+Keterangan:
+  X = Jumlah Penduduk (variabel prediktor)
+  Y = Total Kendaraan Bermotor (variabel respons)
+  X̄ = Rata-rata Penduduk
+  Ȳ = Rata-rata Kendaraan Bermotor</div>
+      <table class="method-table">
+        <thead><tr><th>Parameter</th><th>Nilai</th><th>Interpretasi</th></tr></thead>
+        <tbody>
+          <tr><td>Koefisien Korelasi (r)</td><td><strong>0,9957</strong></td><td>Sangat kuat positif</td></tr>
+          <tr><td>Koefisien Determinasi (R²)</td><td><strong>0,9915 (99,15%)</strong></td><td>99,15% variasi kendaraan dijelaskan oleh penduduk</td></tr>
+          <tr><td>Kategori</td><td><strong>SANGAT KUAT</strong></td><td>r &gt; 0,9 = Sangat Kuat</td></tr>
+        </tbody>
+      </table>
+      <p>Setiap pertumbuhan penduduk Indonesia hampir pasti diikuti oleh pertumbuhan jumlah kendaraan bermotor. Keduanya bergerak sangat sejalan selama periode 2019–2024.</p>
+
+      <h4>E. Regresi Linier — Model Proyeksi</h4>
+      <p>Regresi linier memodelkan hubungan antara variabel prediktor (X) dan variabel respons (Y) dalam bentuk garis lurus untuk membuat prediksi:</p>
+      <div class="method-formula">Y = a + b × X
+
+Keterangan:
+  Y = Total Kendaraan Bermotor (variabel yang diprediksi)
+  X = Jumlah Penduduk (variabel prediktor)
+  b (slope) = perubahan Y untuk setiap 1 satuan kenaikan X
+  a (intercept) = nilai Y ketika X = 0 (nilai teoritis)</div>
+
+      <h4>F. Rumus Perhitungan Slope &amp; Intercept</h4>
+      <div class="method-formula">Slope (b) = Σ(X − X̄)(Y − Ȳ) / Σ(X − X̄)²
+Intercept (a) = Ȳ − b × X̄</div>
+      <table class="method-table">
+        <thead><tr><th>Model Regresi</th><th>Slope (b)</th><th>Intercept (a)</th><th>R²</th></tr></thead>
+        <tbody>
+          <tr><td>Kendaraan ~ Penduduk</td><td>2,5403</td><td>−549.088.397</td><td>0,9915 (99,15%)</td></tr>
+        </tbody>
+      </table>
+
+      <h4>G. Metode Proyeksi Tahun 2026 (Tiga Metode)</h4>
+      <p>Proyeksi final menggunakan rata-rata tiga metode agar lebih robust dan tidak bergantung pada satu asumsi tunggal:</p>
+      <table class="method-table">
+        <thead><tr><th>Metode</th><th>Deskripsi</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Linear Trend</strong></td><td>Model Regresi Y = a + b × Tahun</td></tr>
+          <tr><td><strong>2. Rata-Rata Pertumbuhan Historis</strong></td><td>CAGR Approx. dari data historis</td></tr>
+          <tr><td><strong>3. FORECAST</strong></td><td>Metode peramalan Excel berbasis tren linier</td></tr>
+        </tbody>
+      </table>
+      <div class="method-formula">Proyeksi Final = (Metode 1 + Metode 2 + Metode 3) / 3</div>
     `
   },
   evr2r4:{
     title:'Metodologi Perhitungan Kendaraan Listrik R2 vs R4',
-    subtitle:'Dataset 3 · EV R2 vs R4',
+    subtitle:'Dataset 3 · Korelasi Level & Pertumbuhan YoY EV R2 vs R4',
     html:`
       <h4>A. Sumber Data</h4>
-      <p>Data jumlah kendaraan listrik roda dua (R2) dan roda empat (R4) di Indonesia tahun 2020–2026.</p>
+      <p>Data jumlah kendaraan listrik roda dua (EV R2 / Sepeda Motor Listrik) dan roda empat (EV R4 / Mobil Penumpang Listrik) di Indonesia tahun 2020–2026.</p>
 
       <h4>B. Total EV &amp; Rasio R2/R4</h4>
       <div class="method-formula">Total EV = EV R2 + EV R4
 Rasio R2/R4 = EV R2 / EV R4</div>
 
-      <h4>C. Laju Pertumbuhan Tahunan</h4>
-      <div class="method-formula">Growth EV R2 (%) = ((R2_t / R2_t-1) − 1) × 100
-Growth EV R4 (%) = ((R4_t / R4_t-1) − 1) × 100</div>
+      <h4>C. Laju Pertumbuhan Tahunan (Year-over-Year)</h4>
+      <div class="method-formula">Growth EV R2 (%) = ((R2_t / R2_t−1) − 1) × 100
+Growth EV R4 (%) = ((R4_t / R4_t−1) − 1) × 100</div>
       <p>Tahun awal (2020) menjadi baseline sehingga belum memiliki nilai growth.</p>
+
+      <h4>D. Korelasi Pearson — EV R2 vs EV R4 (Dua Pendekatan)</h4>
+      <p>Dua jenis korelasi dihitung untuk memberikan gambaran yang lebih lengkap tentang hubungan antara EV R2 dan EV R4:</p>
+      <div class="method-formula">r = Σ(X − X̄)(Y − Ȳ) / √[Σ(X − X̄)² × Σ(Y − Ȳ)²]
+
+Keterangan:
+  X = EV R2 (variabel prediktor)
+  Y = EV R4 (variabel respons)
+  X̄ = Rata-rata EV R2
+  Ȳ = Rata-rata EV R4</div>
+      <table class="method-table">
+        <thead><tr><th>Jenis Korelasi</th><th>r</th><th>R²</th><th>Interpretasi</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Level (jumlah unit)</strong></td><td>0,9145</td><td>0,8363</td><td>Jumlah absolut EV R2 dan R4 sangat berkaitan (keduanya tumbuh bersama)</td></tr>
+          <tr><td><strong>% Pertumbuhan YoY</strong></td><td>0,1797</td><td>0,0323</td><td>Laju pertumbuhan EV R2 dan R4 TIDAK selalu sama di tahun yang sama</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Makna:</strong> Korelasi level tinggi (0,914) terjadi karena keduanya sama-sama tumbuh dari tahun ke tahun (tren bersama). Korelasi pertumbuhan rendah (0,180) menunjukkan bahwa lonjakan pertumbuhan EV R2 tidak selalu terjadi bersamaan dengan EV R4 di tahun yang sama — pertumbuhannya bergerak secara independen.</p>
+
+      <h4>E. Regresi Linier — Model Proyeksi EV R2 &amp; R4</h4>
+      <p>Model regresi linier terhadap waktu (Tahun) digunakan untuk memproyeksikan jumlah EV:</p>
+      <div class="method-formula">Y = a + b × Tahun
+
+Keterangan:
+  Y = Jumlah EV (R2 atau R4)
+  b (slope) = pertambahan unit EV per tahun
+  a (intercept) = nilai teoritis saat tahun = 0</div>
+      <table class="method-table">
+        <thead><tr><th>Model Regresi</th><th>Slope (b)</th><th>Intercept (a)</th><th>R²</th></tr></thead>
+        <tbody>
+          <tr><td>EV R2 ~ Tahun</td><td>46.969</td><td>−94.905.060</td><td>0,9264 (92,64%)</td></tr>
+          <tr><td>EV R4 ~ Tahun</td><td>18.372</td><td>−37.127.722</td><td>0,7431 (74,31%)</td></tr>
+        </tbody>
+      </table>
+
+      <h4>F. Proyeksi Final Tahun 2026 (Rata-Rata Tiga Metode)</h4>
+      <p>Proyeksi dihitung menggunakan tiga metode untuk meningkatkan keandalan hasil:</p>
+      <table class="method-table">
+        <thead><tr><th>Variabel</th><th>Metode 1 (Linear)</th><th>Metode 2 (Growth)</th><th>Metode 3 (FORECAST)</th><th>Proyeksi Final (Avg)</th></tr></thead>
+        <tbody>
+          <tr><td>EV R2 (Sep. Motor Listrik)</td><td>254.076</td><td>565.570</td><td>254.076</td><td><strong>357.907</strong></td></tr>
+          <tr><td>EV R4 (Mobil Penumpang Listrik)</td><td>93.777</td><td>355.191</td><td>93.777</td><td><strong>180.915</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="method-formula">Proyeksi Final = (Metode 1 + Metode 2 + Metode 3) / 3</div>
+      <p>Pendekatan tiga metode ini lebih robust karena tidak bergantung hanya pada satu asumsi tunggal. Metode 1 dan 3 menghasilkan nilai sama karena FORECAST Excel menggunakan regresi linier yang identik dengan Metode 1 untuk data deret waktu.</p>
     `
   },
   greenjobs:{
